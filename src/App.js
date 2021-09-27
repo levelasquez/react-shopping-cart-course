@@ -12,18 +12,27 @@ class App extends Component {
       { name: 'Chickpeas', price: 2.5, img: '/products/chickpeas.jpg' },
       { name: 'Lettuce', price: 0.5, img: '/products/lettuce.jpg' },
     ],
+    cart: [],
+  }
+
+  addCart = (product) => {
+    return this.setState({
+      cart: this.state.cart.concat({
+        ...product,
+        quantity: 1,
+      }),
+    })
   }
 
   render() {
+    console.log(this.state.cart)
+
     return (
       <div>
         <Navbar />
         <Layout>
           <Title />
-          <Products
-            addCart={() => console.log('do nothing')}
-            products={this.state.products}
-          />
+          <Products addCart={this.addCart} products={this.state.products} />
         </Layout>
       </div>
     )
