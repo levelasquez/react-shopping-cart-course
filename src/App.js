@@ -1,18 +1,25 @@
 import { Component } from 'react'
 
-import './App.css'
+import Products from './components/Products'
 
 class App extends Component {
   state = {
     products: [
-      { name: 'Tomatoe', prices: 1.5, img: '/products/tomatoe.jpg' },
-      { name: 'Chickpeas', prices: 2.5, img: '/products/chickpeas.jpg' },
-      { name: 'Lettuce', prices: 0.5, img: '/products/lettuce.jpg' },
+      { name: 'Tomatoe', price: 1.5, img: '/products/tomatoe.jpg' },
+      { name: 'Chickpeas', price: 2.5, img: '/products/chickpeas.jpg' },
+      { name: 'Lettuce', price: 0.5, img: '/products/lettuce.jpg' },
     ],
   }
 
   render() {
-    return <p>Hola mundo</p>
+    return (
+      <div>
+        <Products
+          addCart={() => console.log('do nothing')}
+          products={this.state.products}
+        />
+      </div>
+    )
   }
 }
 
