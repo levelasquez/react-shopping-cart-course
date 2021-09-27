@@ -40,11 +40,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.cart)
-
     return (
       <div>
-        <Navbar />
+        <Navbar cart={this.state.cart} />
         <Layout>
           <Title />
           <Products addCart={this.addCart} products={this.state.products} />
