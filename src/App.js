@@ -1,6 +1,7 @@
 import { Component } from 'react'
 
 import Title from './components/Title'
+import Navbar from './components/Navbar'
 import Layout from './components/Layout'
 import Products from './components/Products'
 
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <Layout>
           <Title />
           <Products
