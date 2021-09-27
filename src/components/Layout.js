@@ -15,9 +15,11 @@ const styles = {
 
 class Layout extends Component {
   render() {
+    const { children } = this.props
+
     return (
       <div style={styles.layout}>
-        <div style={styles.container}>{this.props.children}</div>
+        <div style={styles.container}>{children}</div>
       </div>
     )
   }
